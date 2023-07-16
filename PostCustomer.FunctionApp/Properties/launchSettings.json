@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "PostCustomer.FunctionApp": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7298",
+      "launchBrowser": false
+    }
+  }
+}
