@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using CQRSInfrastructure.Services.Command;
 using CQRSInfrastructure.Entities;
+using Microsoft.Azure.Cosmos.Serialization.HybridRow;
 
 namespace PostCustomer.FunctionApp
 {
@@ -25,12 +26,22 @@ namespace PostCustomer.FunctionApp
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject<Customer>(requestBody);
+            try
+            {
+                string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+                dynamic data = JsonConvert.DeserializeObject<Customer>(requestBody);
 
-            var result = await _service.Create(data);
+                var result = await _service.Create(data);
 
-            return new OkObjectResult(result);
+                return new OkObjectResult(result);
+            }
+            catch (Exception e)
+            {
+
+                return new OkObjectResult("Sorry something went wrong, please try again later!");
+            }
+            
+
         }
     }
 }
