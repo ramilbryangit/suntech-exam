@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PostCustomer.FunctionApp", "PostCustomer.FunctionApp\PostCustomer.FunctionApp.csproj", "{1D5B708A-9C61-4D8D-A7E0-598EB61A0157}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSInfrastructure", "CQRSInfrastructure\CQRSInfrastructure.csproj", "{8184A965-E0CD-4CF2-AF71-A399E39D63CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRSInfrastructure", "CQRSInfrastructure\CQRSInfrastructure.csproj", "{8184A965-E0CD-4CF2-AF71-A399E39D63CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
